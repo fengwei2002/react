@@ -4,18 +4,19 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function tick() {
-  const element = (
-    <div>
-      <h1>
-        Hello, world
-      </h1>
-      <h2>
-        It is {new Date().getMilliseconds()}
-      </h2>
-    </div>
-  )
-  root.render(element)
+
+function Welcome(props) {
+  return (<h1> hello {props.name} </h1>);
 }
 
-setInterval(tick, 1000)
+function App() {
+  return (
+    <div>
+      <Welcome name="fengwei" />
+      <Welcome name="fengdong" />
+      <Welcome name="yxc" />
+    </div>
+  );
+}
+
+root.render(<App />)
